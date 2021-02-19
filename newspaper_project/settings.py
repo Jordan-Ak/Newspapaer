@@ -31,6 +31,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    #My apps
+    'users',
+    'pages',
+    #Django default apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,9 +44,8 @@ INSTALLED_APPS = [
      # 3rd Party
     'crispy_forms',
     
-    #My apps
-    'users',
-    'pages',
+    
+    
 ]
 
 MIDDLEWARE = [
