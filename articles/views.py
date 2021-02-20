@@ -42,7 +42,7 @@ class ArticleDeleteView(LoginRequiredMixin,DeleteView):
         obj = self.get_object()
         if obj.author != self.request.user:
             raise PermissionDenied
-        return super().dispatch(request, *args, **kwargs)
+            return super().dispatch(request, *args, **kwargs)
 
 class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Article
