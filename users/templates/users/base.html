@@ -11,6 +11,11 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="{% url 'pages:home' %}">Newspaper</a>
+    {% if user.is_authenticated %}
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a href="{% url 'article:article_new' %}">+ New</a></li>
+      </ul>
+    {% endif %}
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -36,7 +41,6 @@
           Log In</a>
           <a href="{% url 'signup' %}" class="btn btn-primary ml-2">
           Sign up</a>
-          <a href = "{% url 'password_reset' %}" class = "btn btn-primary ml-2">Reset password</a>
         </form>
       {% endif %}
     </div>
